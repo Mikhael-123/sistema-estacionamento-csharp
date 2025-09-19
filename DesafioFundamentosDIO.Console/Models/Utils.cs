@@ -11,9 +11,10 @@ public class Utils
     this.valorPorHora = valorPorHora;
   }
 
-  public void ComeçarPrograma()
+  public void ComeçarPrograma(List<string> veiculos)
   {
     Estacionamento estacionamento = new Estacionamento(this.valorInicial, this.valorPorHora);
+    estacionamento.veiculos = veiculos;
 
     Console.Clear();
     Console.WriteLine("");
@@ -40,7 +41,7 @@ public class Utils
         Environment.Exit(0);
         break;
       default:
-        ComeçarPrograma();
+        ComeçarPrograma(veiculos);
         break;
     }
   }
