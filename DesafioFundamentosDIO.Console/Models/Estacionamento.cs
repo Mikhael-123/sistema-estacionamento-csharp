@@ -4,14 +4,12 @@ public class Estacionamento
 {
   private decimal valorInicial = 0;
   private decimal valorPorHora = 0;
-  Utils utils = new Utils(0, 0);
   public List<string> veiculos = new List<string>();
 
   public Estacionamento(decimal valorInicial, decimal valorPorHora)
   {
     this.valorInicial = valorInicial;
     this.valorPorHora = valorPorHora;
-    this.utils = new Utils(valorInicial, valorPorHora);
   }
 
   public void CadastrarVeiculo()
@@ -23,7 +21,6 @@ public class Estacionamento
     Console.WriteLine("");
     Console.WriteLine("Veículo estacionado com sucesso, pressione qualquer tecla para continuar");
     Console.Read();
-    this.utils.ComeçarPrograma(this.veiculos);
   }
   public void RemoverVeiculo()
   {
@@ -42,7 +39,6 @@ public class Estacionamento
     this.veiculos.Remove(placa);
     Console.WriteLine("Veículo retirado do estacionamento. pressione qualquer tecla para continuar");
     Console.Read();
-    this.utils.ComeçarPrograma(this.veiculos);
   }
   public void ListarVeiculos()
   {
@@ -55,6 +51,5 @@ public class Estacionamento
     Console.WriteLine("");
     Console.WriteLine("Pressione qualquer tecla para continuar");
     Console.Read();
-    this.utils.ComeçarPrograma(this.veiculos);
   }
 }
